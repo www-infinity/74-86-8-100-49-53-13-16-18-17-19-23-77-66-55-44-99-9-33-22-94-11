@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* ── Color palette custom properties ── */
+:root {
+  --color-navy: #0a0f1e;
+  --color-navy-light: #0d1426;
+  --color-cyan: #00d4ff;
+  --color-violet: #7c3aed;
+  --color-amber: #f59e0b;
+  --color-surface: #111827;
+}
+
+/* ── Keyframes ── */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 212, 255, 0.3); }
+  50%       { box-shadow: 0 0 24px rgba(0, 212, 255, 0.7), 0 0 48px rgba(0, 212, 255, 0.3); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Utility classes ── */
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-cyan) 0%, var(--color-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-cyan {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+.float-anim {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-navy);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.5);
+}
+
